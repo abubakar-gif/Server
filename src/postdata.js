@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const multer = require("multer");
 const path = require("path");
-//const { dbconnection } = require("./dbconnection");
+const { dbconnection } = require("./dbconnection");
 
 
 const router = Router();
@@ -28,7 +28,7 @@ router.post("/api/image", upload.single("image"),async (req, res) => {
  
   //console.log(image);
   const sql = `insert into items values(null, ? , ?, ? , ? , ?  ,?)`;
-  /*dbconnection.query(
+  dbconnection.query(
     sql,
     [image, items.title, items.type_item,items.description, items.button_style , items.First_block_description],
     (err, result) => {
@@ -36,7 +36,7 @@ router.post("/api/image", upload.single("image"),async (req, res) => {
       res.send("1")
       //console.log(result);
     }
-  );*/
+  );
 });
 
 

@@ -1,5 +1,5 @@
 const { Router } = require("express");
-//const { dbconnection } = require("./dbconnection");
+const { dbconnection } = require("./dbconnection");
 
 
 const router = Router();
@@ -11,7 +11,7 @@ router.get("/getdata/:nav", (req, res) => {
   //  console.log(nav);
 
   const sql = `select * FROM items ORDER by id DESC`;
- /* dbconnection.query(sql, (err, data) => {
+  dbconnection.query(sql, (err, data) => {
     if (err) return res.json(err);
     else {
       if (search === "home" && nav === "home") {
@@ -32,6 +32,6 @@ router.get("/getdata/:nav", (req, res) => {
         );
       }
     }
-  });*/
+  });
 });
 module.exports = router;
