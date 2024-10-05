@@ -34,4 +34,4 @@ router.get("/getdata/:nav", (req, res) => {
     }
   });
 });
-module.exports = router;
+module.exports = router
