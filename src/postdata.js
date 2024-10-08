@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.post("/api/image", upload.single("image"),async (req, res) => {
+router.post("/api/image", upload.single("image"), async (req, res) => {
   const image = await req.file.fieldname;
   const items = await JSON.parse(req.body.items);
   //console.log(items);
@@ -32,7 +32,7 @@ router.post("/api/image", upload.single("image"),async (req, res) => {
     sql,
     [image, items.title, items.type_item,items.description, items.button_style , items.First_block_description],
     (err, result) => {
-      if (err) return err;
+      if (err) return res.JSON(err);
       res.send("1")
       //console.log(result);
     }
