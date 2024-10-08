@@ -32,6 +32,7 @@ router.get("/getdata/:nav", (req, res) => {
         );
       }
     }
+    image_1727281169132.jpg
   });
 });
 module.exports = router
