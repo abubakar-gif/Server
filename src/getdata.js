@@ -1,6 +1,5 @@
 const { Router } = require("express");
-const { dbconnection } = require("./dbconnection");
-
+const { dbconnection } = require("../dbconnection");
 
 const router = Router();
 
@@ -32,7 +31,6 @@ router.get("/getdata/:nav", (req, res) => {
         );
       }
     }
-    
   });
 });
-module.exports = router
+module.exports = router;
